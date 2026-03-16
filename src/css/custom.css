@@ -302,25 +302,30 @@ html.homepage-active .main-wrapper {
    SIDEBAR LAYOUT
    ============================================================ */
 
-/* Increase padding and font size for top-level items */
+/* Top-level sidebar items */
 .theme-doc-sidebar-menu.menu__list > .menu__list-item > .menu__link,
 .theme-doc-sidebar-menu.menu__list > .menu__list-item > .menu__list-item-collapsible > .menu__link {
-  font-size: 0.9rem;
-  padding: 0.55rem 0.75rem;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.75rem 0.3rem 1.25rem;
   border-radius: 6px;
 }
 
-/* Sub-items (children) slightly smaller */
-.theme-doc-sidebar-menu .menu__list .menu__list .menu__link {
-  font-size: 0.85rem;
-  padding: 0.35rem 0.75rem 0.35rem 2.5rem;
+/* Sub-items (children) */
+.theme-doc-sidebar-menu.menu__list .menu__list .menu__list-item > .menu__link {
+  font-size: 0.78rem !important;
+  padding: 0.25rem 0.75rem 0.25rem 2.75rem;
+}
+
+/* Collapse caret — smaller */
+.theme-doc-sidebar-menu .menu__caret {
+  transform: scale(0.7);
 }
 
 /* Section divider */
 .sidebar-section-divider {
   height: 1px;
   background: var(--ifm-color-emphasis-200);
-  margin: 0.6rem 0.75rem;
+  margin: 0.4rem 1.25rem;
 }
 
 /* Developer Portal — orange highlight section */
