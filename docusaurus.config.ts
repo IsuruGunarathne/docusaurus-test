@@ -61,6 +61,10 @@ const config: Config = {
       },
       items: [
         {
+          type: 'search',
+          position: 'right',
+        },
+        {
           type: 'html',
           position: 'right',
           value: `<a class="navbar-get-help" href="https://discord.gg/wso2" target="_blank" rel="noopener noreferrer">
