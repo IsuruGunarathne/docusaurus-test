@@ -2,6 +2,7 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
   mainSidebar: [
+    // ── Section 1: Overview ──────────────────────────────────────
     {
       type: 'doc',
       id: 'home',
@@ -20,15 +21,10 @@ const sidebars: SidebarsConfig = {
       ],
     },
     {
-      type: 'category',
-      label: 'API Platform Concepts',
-      className: 'sidebar-icon--concepts',
-      link: {type: 'doc', id: 'api-platform-concepts/index'},
-      items: [
-        'api-platform-concepts/organizations',
-        'api-platform-concepts/environments',
-      ],
+      type: 'html',
+      value: '<div class="sidebar-section-divider"></div>',
     },
+    // ── Section 2: Main docs ──────────────────────────────────────
     {
       type: 'category',
       label: 'Create API Proxy',
@@ -145,9 +141,14 @@ const sidebars: SidebarsConfig = {
       ],
     },
     {
+      type: 'html',
+      value: '<div class="sidebar-section-divider"></div>',
+    },
+    // ── Section 3: Developer Portal ───────────────────────────────
+    {
       type: 'category',
       label: 'Developer Portal',
-      className: 'sidebar-icon--portal',
+      className: 'sidebar-icon--portal sidebar-section--highlight',
       link: {type: 'doc', id: 'developer-portal/index'},
       items: [
         'developer-portal/api-discovery',
