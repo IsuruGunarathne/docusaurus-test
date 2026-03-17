@@ -17,7 +17,15 @@ const sidebars: SidebarsConfig = {
       items: [
         'introduction/what-is-api-platform',
         'introduction/quick-start-guide',
-        'introduction/key-concepts',
+        {
+          type: 'category',
+          label: 'API Platform Concepts',
+          link: {type: 'doc', id: 'api-platform-concepts/index'},
+          items: [
+            'api-platform-concepts/organizations',
+            'api-platform-concepts/environments',
+          ],
+        },
       ],
     },
     {
@@ -32,7 +40,16 @@ const sidebars: SidebarsConfig = {
       link: {type: 'doc', id: 'create-api-proxy/index'},
       items: [
         'create-api-proxy/overview',
-        'create-api-proxy/my-apis-ingress',
+        {
+          type: 'category',
+          label: 'My APIs (Ingress)',
+          link: {type: 'doc', id: 'create-api-proxy/my-apis-ingress'},
+          items: [
+            'create-api-proxy/rest-apis',
+            'create-api-proxy/websocket-apis',
+            'create-api-proxy/graphql-apis',
+          ],
+        },
         'create-api-proxy/third-party-apis-egress',
       ],
     },

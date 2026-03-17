@@ -302,23 +302,46 @@ html.homepage-active .main-wrapper {
    SIDEBAR LAYOUT
    ============================================================ */
 
+/* Darker text for all sidebar links */
+.theme-doc-sidebar-menu .menu__link {
+  color: var(--ifm-font-color-base);
+}
+
 /* Top-level sidebar items */
 .theme-doc-sidebar-menu.menu__list > .menu__list-item > .menu__link,
 .theme-doc-sidebar-menu.menu__list > .menu__list-item > .menu__list-item-collapsible > .menu__link {
-  font-size: 0.8rem;
-  padding: 0.3rem 0.75rem 0.3rem 1.25rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.28rem 0.5rem 0.28rem 1.25rem;
   border-radius: 6px;
 }
 
-/* Sub-items (children) */
+/* Sub-items (first level children) */
 .theme-doc-sidebar-menu.menu__list .menu__list .menu__list-item > .menu__link {
-  font-size: 0.78rem !important;
-  padding: 0.25rem 0.75rem 0.25rem 2.75rem;
+  font-size: 0.82rem !important;
+  font-weight: 400;
+  padding: 0.22rem 0.5rem 0.22rem 0.75rem;
+  color: var(--ifm-font-color-base);
+}
+
+/* Sub-sub-items (second level children) */
+.theme-doc-sidebar-menu.menu__list .menu__list .menu__list .menu__list-item > .menu__link {
+  font-size: 0.8rem !important;
+  font-weight: 400;
+  padding: 0.2rem 0.5rem 0.2rem 1rem;
+  color: var(--ifm-font-color-base);
 }
 
 /* Collapse caret — smaller */
 .theme-doc-sidebar-menu .menu__caret {
   transform: scale(0.7);
+}
+
+/* Vertical left border line for first-level sub-items only */
+.theme-doc-sidebar-menu.menu__list > .menu__list-item > .menu__list {
+  border-left: 2px solid var(--ifm-color-emphasis-200);
+  margin-left: 1.55rem;
+  padding-left: 0;
 }
 
 /* Section divider */
