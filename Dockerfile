@@ -15,5 +15,15 @@ FROM nginx:alpine
 COPY --from=builder /app/build /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-EXPOSE 80
+RUN adduser -u 10014 -D -H -G nginx appuser \
+    && chown -R 10014:nginx /usr/share/nginx/html \
+    && chown -R 10014:nginx /var/cache/nginx \
+    && chown -R 10014:nginx /var/log/nginx \
+    && chown -R 10014:nginx /etc/nginx/conf.d \
+    && touch /var/run/nginx.pid \
+    && chown 10014:nginx /var/run/nginx.pid
+
+USER 10014
+
+EXPOSE 8080
 CMD ["nginx", "-g", "daemon off;"]

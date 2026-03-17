@@ -39,3 +39,25 @@ GIT_USER=<Your GitHub username> yarn deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+
+## Docker
+
+### Build the image
+
+```bash
+docker build -t wso2-api-docs:latest .
+```
+
+### Run the container
+
+```bash
+docker run -d -p 8080:8080 --name api-docs wso2-api-docs:latest
+```
+
+The site will be available at `http://localhost:8080`.
+
+### Stop and remove the container
+
+```bash
+docker stop api-docs && docker rm api-docs
+```
