@@ -1,0 +1,10 @@
+.git
+.gitignore
+node_modules
+build/
+.docusaurus/
+*.log
+.DS_Store
+.vscode
+.idea
+CLAUDE.md
