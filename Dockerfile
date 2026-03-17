@@ -15,6 +15,7 @@ FROM nginx:alpine
 RUN apk upgrade --no-cache \
     && sed -i 's|/var/run/nginx.pid|/tmp/nginx.pid|' /etc/nginx/nginx.conf \
     && sed -i '/^user /d' /etc/nginx/nginx.conf \
+    && sed -i '/http {/a\    client_temp_path /tmp/client_temp;\n    proxy_temp_path /tmp/proxy_temp;\n    fastcgi_temp_path /tmp/fastcgi_temp;\n    uwsgi_temp_path /tmp/uwsgi_temp;\n    scgi_temp_path /tmp/scgi_temp;' /etc/nginx/nginx.conf \
     && rm /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
 
 COPY --from=builder /app/build /usr/share/nginx/html
