@@ -57,7 +57,7 @@ const config: Config = {
       logo: {
         alt: 'WSO2',
         src: 'img/APIPlatformDocs.svg',
-        srcDark: 'img/APIPlatformDocs.svg',
+        srcDark: 'img/APIPlatformDocsWhite.svg',
       },
       items: [
         {

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap');
 
 :root {
   --ifm-color-primary: #ff7300;
@@ -10,8 +10,9 @@
   --ifm-color-primary-lightest: #ffaa66;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --ifm-font-family-base: 'Montserrat', sans-serif;
+  --ifm-font-family-base: 'Inter', sans-serif;
   --ifm-font-family-monospace: 'Roboto Mono', monospace;
+  --ifm-menu-color-active: var(--ifm-color-primary);
 }
 
 [data-theme='dark'] {
@@ -302,34 +303,21 @@ html.homepage-active .main-wrapper {
    SIDEBAR LAYOUT
    ============================================================ */
 
-/* Darker text for all sidebar links */
+/* Base: all sidebar links — sub and sub-sub share this */
 .theme-doc-sidebar-menu .menu__link {
+  font-size: 0.78rem !important;
+  font-weight: 400;
   color: var(--ifm-font-color-base);
+  padding: 0.22rem 0.5rem 0.22rem 0.75rem;
 }
 
-/* Top-level sidebar items */
+/* Top-level only — visually distinct */
 .theme-doc-sidebar-menu.menu__list > .menu__list-item > .menu__link,
 .theme-doc-sidebar-menu.menu__list > .menu__list-item > .menu__list-item-collapsible > .menu__link {
-  font-size: 0.82rem;
+  font-size: 0.82rem !important;
   font-weight: 600;
   padding: 0.28rem 0.5rem 0.28rem 1.25rem;
   border-radius: 6px;
-}
-
-/* Sub-items (first level children) */
-.theme-doc-sidebar-menu.menu__list .menu__list .menu__list-item > .menu__link {
-  font-size: 0.82rem !important;
-  font-weight: 400;
-  padding: 0.22rem 0.5rem 0.22rem 0.75rem;
-  color: var(--ifm-font-color-base);
-}
-
-/* Sub-sub-items (second level children) */
-.theme-doc-sidebar-menu.menu__list .menu__list .menu__list .menu__list-item > .menu__link {
-  font-size: 0.8rem !important;
-  font-weight: 400;
-  padding: 0.2rem 0.5rem 0.2rem 1rem;
-  color: var(--ifm-font-color-base);
 }
 
 /* Collapse caret — smaller */
@@ -349,6 +337,28 @@ html.homepage-active .main-wrapper {
   height: 1px;
   background: var(--ifm-color-emphasis-200);
   margin: 0.4rem 1.25rem;
+}
+
+/* All sidebar links — orange on hover */
+.theme-doc-sidebar-menu .menu__link:hover {
+  color: var(--ifm-color-primary) !important;
+}
+
+/* Active leaf page — orange, no background tint */
+.theme-doc-sidebar-menu .menu__link--active:not(.menu__link--sublist) {
+  color: var(--ifm-color-primary) !important;
+  background: transparent;
+}
+
+/* Active ancestor categories (child is selected) — bold dark, not orange */
+.theme-doc-sidebar-menu .menu__link--active.menu__link--sublist {
+  color: var(--ifm-font-color-base) !important;
+  font-weight: 600 !important;
+}
+
+/* Category directly selected (its own page is active) — orange */
+.theme-doc-sidebar-menu .menu__list-item-collapsible--active > .menu__link--active.menu__link--sublist {
+  color: var(--ifm-color-primary) !important;
 }
 
 /* Developer Portal — orange highlight section */
