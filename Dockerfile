@@ -12,6 +12,7 @@ RUN npm run build
 # Stage 2: Serve
 FROM nginx:alpine
 
+
 RUN apk upgrade --no-cache \
     && sed -i 's|/var/run/nginx.pid|/tmp/nginx.pid|' /etc/nginx/nginx.conf \
     && sed -i '/^user /d' /etc/nginx/nginx.conf \
